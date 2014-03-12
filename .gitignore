@@ -1,0 +1,8 @@
+*.class
+*.ucls
+*.jpg
+*.prefs
+*.txt
+*.apk
+*.dex
+bin/dexedLibs/mobileservices-1.1.0-sources-98adac1f11c62b38fbc7e35f8429904e.jar
