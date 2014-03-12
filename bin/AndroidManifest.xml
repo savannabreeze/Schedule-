@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skripsi.scheduleplus"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    <!-- Content Provider Permission -->
+    <permission 
+        android:name="de.skripsi.scheduleplus.READ"
+        android:description="@string/desc_permission_read_agenda"
+		android:label="@string/label_permission_read_agenda"
+		android:protectionLevel="normal"/>
+    
+    <permission 
+        android:name="de.skripsi.scheduleplus.WRITE"
+        android:description="@string/desc_permission_write_agenda"
+		android:label="@string/label_permission_write_agenda"
+		android:protectionLevel="normal"/>
+    
+    <!-- Masih telusuri memori ini permission apa ya -->
+    <permission android:name="com.skripsi.scheduleplus.permission.C2D_MESSAGE" 
+    android:protectionLevel="signature" />
+    
+    <!-- Android Built-in Permissions -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="com.skripsi.scheduleplus.permission.C2D_MESSAGE" /> 
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+	<uses-permission android:name="android.permission.READ_SMS" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.READ_CONTACTS"/>
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />	
+    
+	<!-- Target Android Version And Minimum -->
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/schedplusicon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" android:enabled="true" android:logo="@drawable/schedplusicon">
+        
+        <!-- Definisi Content Provider -->
+        <provider 
+            android:name=".dataprovider.schedulePlusProvider"
+            android:authorities="de.skripsi.scheduleplus"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:label="AgendaProvider"
+            android:readPermission="de.skripsi.scheduleplus.READ"
+            android:writePermission="de.skripsi.scheduleplus.WRITE"/>
+        
+        <!-- Untuk Search Box -->
+        <meta-data 
+            android:name="android.app.default_searchable"
+            android:value=".ContactSearch"/>
+        <!-- Untuk Search Box -->
+        
+        <meta-data 
+            android:name="com.google.android.gms.version" 
+            android:value="@integer/google_play_services_version" />
+        
+        <activity
+            android:name="com.skripsi.scheduleplus.ContactAdd"
+            android:label="@string/event_label">
+        </activity>
+        <activity
+            android:name="com.skripsi.scheduleplus.LogIn"
+            android:label="@string/account_label" android:parentActivityName="@string/mainParent">
+        </activity>
+        <activity 
+            android:name="Main"  
+            android:label="@string/app_name" android:logo="@drawable/schedplusicon" android:icon="@drawable/schedplusicon">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> 
+        <activity android:name="AgendaFormFragment" android:parentActivityName="@string/mainParent" android:label="@string/agenda_label"></activity>
+        <activity android:name="AgendaViewActivity" android:label="@string/agenda_label" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name=".FilePicker.FileDialog" android:label="@string/file_picker_label"></activity>
+        <activity android:name="AutoMsgFormFragment" android:label="@string/sms_scheduler_label" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name="AutoMsgViewActivity" android:label="@string/sms_scheduler_label" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name="ContactList" android:screenOrientation="unspecified" android:label="@string/contactListLabel" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name="Register" android:label="@string/register_label" android:parentActivityName="@string/loginParent"></activity>
+        <activity android:name="ReminderFormFragment" android:label="@string/reminder_label" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name="ReminderViewActivity" android:label="@string/reminder_label" android:parentActivityName="@string/mainParent"></activity>
+        
+        <!-- Broadcast Receiver -->
+        <receiver 
+            android:name="com.skripsi.scheduleplus.SMSReceiver"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter >
+                <action
+                    android:name="com.skripsi.scheduleplus.SMSReceiver"></action>
+            </intent-filter>
+        </receiver>
+        
+        <receiver 
+            android:name="com.skripsi.scheduleplus.ReminderReceiver"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter >
+                <action
+                    android:name="com.skripsi.scheduleplus.ReminderReceiver"></action>
+            </intent-filter>
+        </receiver>
+        
+        <!-- Notification Receiver -->
+        <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
+   				 android:permission="com.google.android.c2dm.permission.SEND">
+    	<intent-filter>
+        	<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        	<category android:name="com.skripsi.scheduleplus" />
+    	</intent-filter>
+</receiver>
+        <activity android:name="RequestActivity" android:label="@string/event_label"></activity>
+        <activity android:name="EventAdd" android:label="@string/event_label" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name="EventViewActivity" android:label="@string/event_label" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name="About" android:label="@string/about_label" android:logo="@drawable/schedplusicon" android:icon="@drawable/schedplusicon" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:name="Help" android:label="@string/help_label" android:logo="@drawable/schedplusicon" android:icon="@drawable/schedplusicon" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:label="@string/user_account_label" android:name="UserAccount" android:logo="@drawable/schedplusicon" android:icon="@drawable/schedplusicon" android:parentActivityName="@string/mainParent"></activity>
+        <activity android:label="@string/forgot_password_label" android:name="ForgotPasswordActivity" android:parentActivityName="@string/loginParent"></activity>
+        <activity android:name="LocationSearchActivity" android:label="@string/reminder_label" android:parentActivityName="@string/reminder_form_parent"></activity>
+        <service android:name="ReminderService"></service>
+    </application>
+
+</manifest>

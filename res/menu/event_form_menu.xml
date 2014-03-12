@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item 
+        android:id="@+id/event_save"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:icon="@drawable/tick"
+        android:title="@string/add_agenda_button"/>
+    
+    <item 
+        android:id="@+id/event_invite"
+        android:orderInCategory="2"
+        android:showAsAction="always"
+        android:icon="@drawable/invite"
+        android:title="@string/event_invite_option"/>
+
+</menu>

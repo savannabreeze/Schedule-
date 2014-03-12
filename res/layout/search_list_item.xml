@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    
+        <TextView
+            android:id="@+id/userIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        
+        <TextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="15dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/addContactButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"
+            android:layout_toRightOf="@id/userNameTextView"
+            android:visibility="gone"
+            android:text="Add" />
+
+        <TextView
+            android:id="@+id/contactStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"
+            android:layout_toRightOf="@id/userNameTextView"
+            android:visibility="gone"
+             />
+		
+    
+
+</RelativeLayout>

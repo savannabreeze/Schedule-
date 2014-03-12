@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/addEvent"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:icon="@drawable/add"
+        android:title="@string/agenda_add_title"/>
+    <item 
+        android:id="@+id/contactList"
+        android:orderInCategory="2"
+        android:showAsAction="always"
+        android:icon="@drawable/contact"
+        android:title="@string/contact_list"/>
+    
+    <item 
+        android:id="@+id/requestList"
+        android:orderInCategory="3"
+        android:showAsAction="always"
+        android:icon="@drawable/notif"
+        android:title="@string/requests_lists"/>
+    
+
+</menu>

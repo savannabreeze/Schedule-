@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+	<LinearLayout 
+	     android:orientation="vertical"
+	     android:layout_width="match_parent"
+	     android:layout_height="match_parent">
+	
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/event_title"
+	            android:textSize="14sp" />
+	
+	        
+	        <EditText
+	            android:id="@+id/txtReminderTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:ems="10" 
+	           >
+	        	<requestFocus />
+	        </EditText>
+	
+	        <TextView
+	            android:id="@+id/textView3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/add_form_description" 
+	            android:textSize="14sp"/>
+	
+	        <EditText
+	            android:id="@+id/txtReminderDescription"
+	            android:gravity="top"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:lines="5"
+	            android:ems="10"
+	            android:inputType="textMultiLine"
+	            android:scrollbars="vertical" />
+	
+	        <TextView
+	            android:id="@+id/eventTimeTextView"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="Location"
+	            android:textSize="14sp" />
+			
+	        <EditText
+	            android:id="@+id/reminderLocationEditText"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:ems="10"
+	            android:focusable="false"
+	            android:clickable="true"/>
+	
+	</LinearLayout>
+</ScrollView>

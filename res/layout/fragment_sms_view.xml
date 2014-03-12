@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+	<LinearLayout 
+	     android:orientation="vertical"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content">
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dp"
+	            android:text="@string/view_sms_to"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:textStyle="bold" />
+	
+	        <TextView
+	            android:id="@+id/SMSPhoneTextView"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dp"
+	            />
+	
+	        <TextView
+	            android:id="@+id/textView3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dp"
+	            android:text="@string/view_sms_date_time"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:textStyle="bold"  />
+	
+	        <TextView
+	            android:id="@+id/SMSTimeTextView"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dp"
+	            />
+	
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dp"
+	            android:text="@string/view_sms_message"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:textStyle="bold" />
+	
+	        <TextView
+	            android:id="@+id/SMSMessageTextView"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="5dp"
+	            android:maxLines="10"
+	            android:scrollbars="vertical"
+	             />
+	
+	</LinearLayout>
+</ScrollView>

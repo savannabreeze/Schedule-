@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent">
+	<LinearLayout 
+	     android:orientation="vertical"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content">
+	     
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/event_title"
+	            android:textSize="14sp" />
+	
+	        
+	        <EditText
+	            android:id="@+id/eventTitleAddEditText"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:ems="10" 
+	            android:inputType="text">
+	        	<requestFocus />
+	        </EditText>
+	
+	        <TextView
+	            android:id="@+id/agendaTitleTextView"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/event_date"
+	            android:textSize="14sp" />
+			
+	        <EditText
+	            android:id="@+id/eventDateAddEditText"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:ems="10"
+	            android:inputType="date" 
+	            android:focusable="false"
+	            android:clickable="true"/>
+	
+	        <TextView
+	            android:id="@+id/eventTimeTextView"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/event_time"
+	            android:textSize="14sp" />
+			
+	        <EditText
+	            android:id="@+id/eventTimeAddEditText"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:ems="10"
+	            android:inputType="date" 
+	            android:focusable="false"
+	            android:clickable="true"/>
+	
+	        <TextView
+	            android:id="@+id/textViewSekian"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/event_place"
+	            android:textSize="14sp" />
+	
+	        
+	        <EditText
+	            android:id="@+id/eventPlaceAddEditText"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:ems="10" 
+	            android:inputType="text">
+	        </EditText>
+	
+	        <TextView
+	            android:id="@+id/textView3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/add_form_description" 
+	            android:textSize="14sp"/>
+	
+	        <EditText
+	            android:id="@+id/eventDescriptionAddEditText"
+	            android:gravity="top"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:lines="3"
+	            android:ems="10"
+	            android:inputType="textMultiLine"
+	            android:scrollbars="vertical" />
+	
+	
+	        <TextView
+	            android:id="@+id/agendaDateTextView"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:text="@string/event_invite"
+	            android:textSize="14sp" />
+	
+	        <ListView
+	            android:id="@+id/invitedListView"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            >
+	        </ListView>
+	</LinearLayout>
+</ScrollView>
